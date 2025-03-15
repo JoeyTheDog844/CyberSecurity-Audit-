@@ -26,8 +26,13 @@ def disable_service(service_name, display_name):
     except subprocess.CalledProcessError:
         print(f"❌ Failed to disable {display_name}. (Requires Admin Privileges)")
 
-# Disable each service
-for service, display_name in services.items():
-    disable_service(service, display_name)
+# ✅ New function to disable all services only when explicitly called
+def disable_all_services():
+    for service, display_name in services.items():
+        disable_service(service, display_name)
 
-print("\n🚀 Done! The selected services have been disabled.")
+    print("\n🚀 Done! The selected services have been disabled.")
+
+# Prevents automatic execution when imported
+if __name__ == "__main__":
+    disable_all_services()
