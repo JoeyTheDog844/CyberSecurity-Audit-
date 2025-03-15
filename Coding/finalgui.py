@@ -3,6 +3,7 @@ from system_information2 import generate_system_report, get_system_info, get_net
 from pdf_generator import generate_pdf_report
 from cache_manager import clear_all_caches, clear_recycle_bin, clear_temp_files, clear_dns_cache, clear_windows_update_cache
 from disable_services import disable_service, disable_all_services
+from disable_services_with_caution import disable_all_caution_services
 
 # Create main application window
 root = tk.Tk()
@@ -77,6 +78,13 @@ btn_clear_update_cache.grid(row=2, column=1, padx=5, pady=2)
 
 btn_disable = tk.Button(root, text="Disable Services", font=button_font, bg="red", fg="white", height=2, width=20, command=disable_all_services)
 btn_disable.pack(pady=10)
+
+btn_disable_caution = tk.Button(
+    root, text="Disable Services with Caution", font=button_font,
+    bg="orange", fg="white", height=2, width=25,
+    command=disable_all_caution_services
+)
+btn_disable_caution.pack(pady=10)
 
 # Run the Tkinter loop
 root.mainloop()
