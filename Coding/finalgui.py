@@ -42,7 +42,7 @@ def toggle_cache_options():
     if cache_frame.winfo_ismapped():  # Check if frame is visible
         cache_frame.pack_forget()  # Hide if already visible
     else:
-        cache_frame.pack(pady=5)  # Show when "Clear Cache" is clicked
+        cache_frame.pack(pady=5, before=btn_disable)  # Show above "Disable Services" button
 
 # Function to clear all caches
 def clear_all():
@@ -81,7 +81,7 @@ btn_disable.pack(pady=10)
 
 btn_disable_caution = tk.Button(
     root, text="Disable Services with Caution", font=button_font,
-    bg="orange", fg="white", height=2, width=25,
+    bg="red", fg="white", height=2, width=25,
     command=disable_all_caution_services
 )
 btn_disable_caution.pack(pady=10)
