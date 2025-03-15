@@ -2,7 +2,7 @@ import tkinter as tk
 from system_information2 import generate_system_report, get_system_info, get_network_details, get_last_windows_update, get_desktop_files, get_system_identity
 from pdf_generator import generate_pdf_report
 from cache_manager import clear_all_caches, clear_recycle_bin, clear_temp_files, clear_dns_cache, clear_windows_update_cache
-#from disable_services import disable_service
+from disable_services import disable_service, disable_all_services
 
 # Create main application window
 root = tk.Tk()
@@ -75,8 +75,8 @@ btn_clear_temp.grid(row=1, column=1, padx=5, pady=2)
 btn_clear_dns.grid(row=2, column=0, padx=5, pady=2)  
 btn_clear_update_cache.grid(row=2, column=1, padx=5, pady=2)  
 
-#btn_disable = tk.Button(root, text="Disable Services", font=button_font, bg="red", fg="white", height=2, width=20, command=disable_service)
-#btn_disable.pack(pady=10)
+btn_disable = tk.Button(root, text="Disable Services", font=button_font, bg="red", fg="white", height=2, width=20, command=disable_all_services)
+btn_disable.pack(pady=10)
 
 # Run the Tkinter loop
 root.mainloop()
